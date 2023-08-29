@@ -1,0 +1,30 @@
+{
+  "name": "typescriptmastery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgray6/TypescriptMastery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgray6/TypescriptMastery/issues"
+  },
+  "homepage": "https://github.com/tgray6/TypescriptMastery#readme",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "inquirer": "^8.2.0",
+    "msnodesqlv8": "^2.6.0",
+    "mssql": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.0",
+    "lite-server": "^2.6.1"
+  }
+}
