@@ -1,39 +1,44 @@
-function printGeneric<T>(value: T): void {
-  console.log(typeof value);
-  console.log(value);
+interface APIResponse<Data = { status: number }> {
+  data: Data;
+  isError: boolean;
 }
 
-printGeneric("this is a string");
-printGeneric(1);
+interface UserResponse {
+  name: string;
+  age: number;
+}
 
-printGeneric<string>("whaaat");
+interface GameResponse {
+  title: string;
+  score: number;
+}
 
-// abstract class EmployeeBase {
-//   abstract doWork(): void;
-//   constructor(public id: number, public name: string) {}
-// }
+interface StatusResponse {
+  status: number;
+}
 
-// class OfficeWorker extends EmployeeBase {
-//   doWork(): void {
-//     console.log(`${this.name} doing some work`);
-//   }
-// }
+type UserResponseType = APIResponse<UserResponse>;
+type GameResponseType = APIResponse<GameResponse>;
 
-// class OfficeManager extends OfficeWorker {
-//   public employees: OfficeWorker[] = [];
-//   manageEmployees() {
-//     super.doWork();
-//     this.employees.forEach((employee) => {
-//       employee.doWork();
-//     });
-//   }
-// }
+const UserResponse: UserResponseType = {
+  data: {
+    name: "Tyler",
+    age: 1000,
+  },
+  isError: false,
+};
 
-// let joeBlogg = new OfficeWorker(1, "Joe");
-// let jillBlogg = new OfficeWorker(2, "Jill");
-// let jackManager = new OfficeManager(3, "Jack");
+const GameResponse: GameResponseType = {
+  data: {
+    title: "Megaman",
+    score: 10,
+  },
+  isError: false,
+};
 
-// jackManager.employees.push(joeBlogg);
-// jackManager.employees.push(jillBlogg);
-
-// jackManager.manageEmployees();
+const StatusResponse: APIResponse = {
+  data: {
+    status: 401,
+  },
+  isError: false,
+};
